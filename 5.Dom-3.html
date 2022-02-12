@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 3</title>
+
+    <!-- Just use internal style to practice we will do by JS -->
+
+    <!-- <style>
+        #second-title {
+            background-color: rgba(0, 255, 255, 0.281);
+        }
+    </style> -->
+
+</head>
+
+<body>
+    <header>
+        <h1>Welocome to my Blog Website</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h3>My Awesome Blog - 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article>
+                <h3 id="second-title">My Awesome Blog - 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article>
+                <h3 id="third-title">My Awesome Blog - 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+        </section>
+    </main>
+
+
+    <!---------- Internal JavaScript ----------->
+    <!-- ===================================== -->
+
+
+    <script>
+
+        // we can change text, save text by using JS.
+
+        /*
+        sometimes we need to make change for a particular part. 
+        ex- we need to change one 'paragraph' of <p> tags. We can do
+        it by 'CSS' [set 'id' for that part] but here we do that by JS.
+        
+        
+        **** browser console ==>
+
+        1. // document.getElementByID('second-title') // --> [to access this ID]
+
+        2. // document.getElementByID('second-title').style // 
+
+        browser recommends all CSS properties. [Names are in camelCase]
+
+        
+        
+        here we can set the value
+
+        // document.getElementByID('second-title').style.color = 'red' //
+
+        */
+
+
+        // *** to make change from document
+
+
+        // second-title
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.color = 'red'; // color wil be set
+
+        secondTitle.style.textAlign = 'center'; // text alignment done
+
+
+        // third-title
+        const thirdTitle = document.getElementById('third-title');
+        thirdTitle.innerText = 'Title Updated By JS'; // title update
+        thirdTitle.style.color = 'purple'; // color wil be set
+        thirdTitle.style.backgroundColor = 'aqua'; // Background color
+        thirdTitle.style.padding = '10px'; // padding wil be set
+        thirdTitle.style.marginLeft = '20px'; // margin-left wil be set
+
+    </script>
+</body>
+
+</html>

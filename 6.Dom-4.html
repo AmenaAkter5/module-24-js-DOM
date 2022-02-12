@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 4</title>
+
+    <!-- Just use internal style to practice we will do by JS -->
+
+    <style>
+        /* video 6 */
+
+        /* .blog {
+            border: 2px solid red;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Welocome to my Blog Website</h1>
+    </header>
+    <main>
+        <section class="blogs">
+            <article class="blog">
+                <h3>My Awesome Blog - 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h3 id="second-title">My Awesome Blog - 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">My Awesome Blog - 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article class="blog">
+                <h3 id="fourth-title">My Awesome Blog - 4</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+        </section>
+    </main>
+
+
+    <!---------- Internal JavaScript ----------->
+    <!-- ===================================== -->
+
+
+    <script>
+
+
+        // Video-5
+
+        // we can change text, save text by using JS.
+
+        // Explore getElementByID
+
+        /*
+        sometimes we need to make change for a particular part. 
+        ex- we need to change one 'paragraph' of <p> tags. We can do
+        it by 'CSS' [set 'id' for that part] but here we do that by JS.
+        
+        
+        **** browser console ==>
+
+        1. // document.getElementByID('second-title') // --> [to access this ID]
+
+        2. // document.getElementByID('second-title').style // 
+
+        browser recommends all CSS properties. [Names are in camelCase]
+
+        
+        
+        ** here we can set the value
+
+        // document.getElementByID('second-title').style.color = 'red' //
+
+        */
+
+
+        // *** to make change from document [getElementById]
+
+
+        // second-title
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.color = 'red'; // color wil be set
+
+        secondTitle.style.textAlign = 'center'; // text alignment done
+
+
+        // third-title
+        const thirdTitle = document.getElementById('third-title');
+        thirdTitle.innerText = 'Title Updated By JS'; // title update
+        thirdTitle.style.color = 'purple'; // color wil be set
+        thirdTitle.style.backgroundColor = 'aqua'; // Background color
+        thirdTitle.style.padding = '10px'; // padding wil be set
+        thirdTitle.style.marginLeft = '20px'; // margin-left wil be set
+
+
+
+
+
+        // Video-6
+
+
+        // Explore getElementsByClassName
+
+        /*
+        **** browser console ==>
+
+        1. // document.getElementsByClassName('blog') // --> [to access this 'blog' class.]
+
+        2. // document.getElementsByClassName('blog').style // 
+
+        browser recommends all CSS properties. [Names are in camelCase]
+        */
+
+
+        // *** to make change from document [getElementByClassName]
+
+        const blogs = document.getElementsByClassName('blog');
+
+        // to see the blog class serially in console
+
+        // for (const blog of blogs) {
+        //     console.log(blog);
+        // }
+
+
+        // to add the style on blog 
+        for (const blog of blogs) {
+            blog.style.border = '2px solid red';
+            blog.style.borderRadius = '10px';
+            blog.style.margin = '10px';
+            blog.style.padding = '10px';
+        }
+
+
+        /*
+
+        ** CSS selector [querySelector]
+
+        **** browser console ==>
+        
+        1. // document.querySelector('.blog') // --> here we got one 'blog' class
+
+        2. To get all blog class we need to use 'querySelectorAll'
+
+        // document.querySelectorAll('.blog') // 
+
+
+
+
+        3. To get the 'paragraph' of id="second-blog"
+
+        // document.querySelectorAll('#second-blog p') // 
+
+
+
+
+        [Summary]
+
+        ***** Five Things to know: [To access html document by JS]
+
+        1. To access by tag Name: getElementsByTagName
+
+        Ex-
+
+        * document.getElementsByTagName('p') --> To access all <p> tags
+        * document.getElementsByTagName('article') --> To access all <article> tags
+        * document.getElementsByTagName('h3') --> To access all <h3> tags
+
+
+        2. To access specific element by ID Name: getElementByID
+
+        Ex-
+
+        * document.getElementByID('second-title')
+        * document.getElementByID('second-blog')
+         
+         
+        3. To access class by Class Name: getElementsByClassName
+
+        Ex-
+
+        * document.getElementsByClassName('blog')
+        * document.getElementsByClassName('blogs')
+         
+        
+        4. To select class or ID by CSS selector: querySelector()
+
+        // document.querySelector(); //
+    
+
+        Ex-
+
+        * document.querySelector('.blog') --> To access one 'blog' class.
+
+
+        5. To select class or ID by CSS selector: querySelectorAll()
+
+        // document.querySelectorAll(); //
+
+        * document.querySelectorAll('.blog') --> To access all 'blog' class.
+        * document.querySelectorAll('#second-blog p') --> To access 'second-blog' ID and its <p> tag.
+        
+        */
+
+
+
+
+
+
+
+        /*
+        
+// Video-7:        
+
+
+[To get Class We use two things and they show the same result but there object name is different. They are- HTMLCollection & Nodelist]
+
+
+        1. HTMLCollection:
+
+        Browser Console ==>
+
+        // document.getElementsByClassName('blog') > Enter //
+
+        we get all blog class on an object which name is 'HTMLCollection'
+
+        * The Result is:
+        
+        HTMLCollection [0: article.blog, 1: article#second-blog.blog, 2: article.blog, 3: article.blog, length: 4, … ]
+
+
+
+
+        2. Nodelist:
+
+        Browser Console ==>
+
+        // document.querySelectorAll('.blog') > Enter //
+
+        we get all blog class on an object which name is 'NodeList'
+
+        * The Result is:
+
+        NodeList(4) [ article.blog, article#second-blog.blog, article.blog, article.blog]
+
+        */
+
+
+        /* // **************
+        
+        // To access attribute of any element
+        
+        **** browser console ==>
+        
+        1. // document.getElementByID('fourth-title').getAttribute('id') // --> [to access this ID's Attribute ('id')]
+
+
+        */
+
+        // In document file we will declare variable to call function
+
+        // getAttribute
+        const fourthTitle = document.getElementById('fourth-title');
+        fourthTitle.getAttribute('id'); // id name পাওয়া যাবে
+        fourthTitle.getAttribute('style'); // style গুলো পাওয়া যাবে
+
+        // set attribute
+        fourthTitle.setAttribute('title', 'I added a tooltip using JS');
+
+
+        // **** In browser console we also declare variable and call function to check but to apply on document we need to do program and save on document file.
+
+
+        // parentNode
+
+        fourthTitle.parentNode // to see the parentNode of fourthTitle
+
+        fourthTitle.parentNode.parentNode // to see the parentNode of parentNode.
+
+        fourthTitle.parentNode.parentNode.parentNode
+
+        // by this I can check the parentNode of any element
+
+
+
+        // childNodes
+
+        const secondBlog = document.getElementById('second-blog');
+        secondBlog.childNodes // nodeList is shown
+
+
+    </script>
+</body>
+
+</html>

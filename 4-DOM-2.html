@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welocome to my Blog Website</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h3>My Awesome Blog - 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article>
+                <h3>My Awesome Blog - 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+            <article>
+                <h3>My Awesome Blog - 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias vitae distinctio asperiores
+                    accusamus? Delectus consectetur illum et repellendus, at tenetur iste aperiam quisquam illo esse
+                    magnam blanditiis qui minus sapiente labore est? At necessitatibus vero corporis corrupti
+                    consequuntur ipsa fuga itaque, tenetur, labore officia quae deleniti? Quos rerum recusandae dolores!
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!---------- Internal JavaScript ----------->
+    <!-- ===================================== -->
+
+    <script>
+
+        // 1. write object and we can access object from browser console.
+
+        // browser console --> objectname.property name 
+        // [ex-student.name]
+
+        const student = {
+            ID: 15,
+            Name: 'Kismot Ali',
+            age: 16,
+            height: 60,
+        }
+
+
+        // 2. To access the tag with elements from browser console
+
+        // browser console --> document.tagname [ex- document.body]
+
+
+
+        // 3. To access the h3 tag from document
+
+        // browser console shows the result of function.
+
+        const blogTitles = document.getElementsByTagName('h3');
+        console.log(blogTitles);
+
+
+
+        // 4. we can make loop to see the elements of "blogTitles" in browser console.
+
+        for (const h3 of blogTitles) {
+            console.log(h3);
+        }
+
+        // 5. we can also access inner text of h3 and it will be displayed on browser console.
+
+        for (const h3 of blogTitles) {
+            console.log(h3.innerText);
+        }
+
+        // 6. If we want to access paragraph tag
+
+        const blogDetails = document.getElementsByTagName('p');
+        console.log(blogDetails);
+
+        // or, run for loop
+
+        for (const p of blogDetails) { // we can also use 'blog' of details
+            console.log(p);
+        }
+
+        // to access inner text of <p> tag
+
+        for (const p of blogDetails) { // we can also use 'blog' of details
+            console.log(p.innerText);
+        }
+
+        // we can change text, save text by using JS.
+
+    </script>
+</body>
+
+</html>
